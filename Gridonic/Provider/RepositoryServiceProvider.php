@@ -1,6 +1,6 @@
 <?php
 
-namespace Knp\Provider;
+namespace Gridonic\Provider;
 
 use Silex\ServiceProviderInterface;
 use Silex\Application;
@@ -15,7 +15,7 @@ class RepositoryServiceProvider implements ServiceProviderInterface
     {
         foreach ($app['repository.repositories'] as $label => $class) {
             $app[$label] = $app->share(function($app) use ($class) {
-                return new $class($app['db']); 
+                return new $class($app['db']);
             });
         }
     }

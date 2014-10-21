@@ -1,6 +1,6 @@
 <?php
 
-namespace Knp;
+namespace Gridonic;
 
 use Doctrine\DBAL\Connection;
 
@@ -63,8 +63,8 @@ abstract class Repository
 
     /**
      * Returns a record by supplied id
-     * 
-     * @param mixed $id 
+     *
+     * @param mixed $id
      * @return array
      */
     public function find($id)
@@ -74,7 +74,7 @@ abstract class Repository
 
     /**
      * Returns all records from this repository's table
-     * 
+     *
      * @return array
      */
     public function findAll()
