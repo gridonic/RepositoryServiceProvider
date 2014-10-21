@@ -17,7 +17,7 @@ abstract class Repository
     /**
      * @var Doctrine\DBAL\Connection
      */
-    public $db;
+    protected $db;
 
     /**
      * @param Doctrine\DBAL\Connection $db
@@ -25,6 +25,14 @@ abstract class Repository
     public function __construct(Connection $db)
     {
         $this->db = $db;
+    }
+
+    /**
+     * @return integer the last inserted id
+     */
+    public function lastInsertId()
+    {
+        return $this->db->lastInsertId();
     }
 
     /**
